@@ -1,0 +1,22 @@
+{
+  "name": "cypress-bbc-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.13.10",
+    "babel-loader": "^8.2.2",
+    "cypress": "^6.5.0",
+    "cypress-xpath": "^1.6.2",
+    "webpack": "^5.25.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.13.10",
+    "cypress-webpack-preprocessor-v5": "^5.0.0-alpha.1"
+  }
+}
