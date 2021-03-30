@@ -26,8 +26,22 @@ class CBeebiesPageObject {
         cy.get("a").each((el) => {
             arr.push(el.text());
         })
+        //print the count of anchor tags and join teh array
         console.log(`Anchor Tag Count - ${arr.length}`);
         console.log(`Anchor Tags Text String - ${arr.join(",")}`);
+        //         O/p—Anchor Tag Count - 0
+        //  Anchor Tags Text String - 
+        // Because         let arr =[];    console.log(`Anchor Tag Count - ${arr.length}`); console.log(`Anchor Tags Text String - ${arr.join(",")}`); these all are synchronous functions. Sprint these first so we got o/p is 
+        //     Anchor Tag Count - 0 means it’s empty array.
+        //  Anchor Tags Text String - 
+        // Then execute this asynchronous function.
+        //         cy.get("a").each((el) => {
+        //             arr.push(el.text());
+        //         })
+        //this si resolved. we rae queuing up the things all right so the 
+        //logic that you have to work on . so use .then again pass calback function 
+        //but that gives you the opportunity to run your code once the previous command has been 
+        //executed all , we can it below it block.
     }
 
     static asyncactions() {
@@ -35,9 +49,13 @@ class CBeebiesPageObject {
         cy.get("a").each((el) => {
             arr.push(el.text());
         }).then(() => {
+            //print the count of anchor tags and join teh array
             console.log(`Anchor Tag Count - ${arr.length}`);
             console.log(`Anchor Tags Text String - ${arr.join(",")}`);
         })
+
+        //         O/p—Anchor Tag Count - 122
+        //  Anchor Tags Text String - BBC Homepage,Skip to content,Accessibility Help,BBC Account,Notifications,Home,News,Sport.
     }
 
     static allanchortags() {
@@ -46,9 +64,13 @@ class CBeebiesPageObject {
             arr.push(el.text());
         }).as('myarr')
         cy.get('@myarr').then(() => {
+            //print the count of anchor tags and join teh array
             console.log(`Anchor Tag Count - ${arr.length}`);
             console.log(`Anchor Tags Text String - ${arr.join(",")}`);
         })
+
+        //         O/p—Anchor Tag Count - 122
+        //  Anchor Tags Text String - BBC Homepage,Skip to content,Accessibility Help,BBC Account,Notifications,Home,News,Sport.
     }
     static forLoop() {
         let arr = [];
@@ -59,6 +81,7 @@ class CBeebiesPageObject {
                 }
                 return arr;
             }).then((myarr) => {
+                //print the count of anchor tags and join teh array
                 console.log(`Anchor Tag Count - ${myarr.length}`);
                 console.log(`Anchor Tags Text String - ${myarr.join(",")}`);
             })
@@ -66,10 +89,26 @@ class CBeebiesPageObject {
     static forBreakLoop(){
         let array = [...Array(10).keys()]
         for (let index = 0; index < array.length; index++) {
+            //    console.log(array[index]);
+            //above console o/p is
+            //    0
+            //    1
+            //    2
+            //    3
+            //    4
+            //    5
             if (array[index] === 5) {
                 break;
+                //    return false would also do same
             }
             console.log(array[index]);
+            //this console o/p is 
+            //    0
+            //    1
+            //    2
+            //    3
+            //    4
+
         }
     }
     static itemHeading() {

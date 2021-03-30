@@ -23,6 +23,7 @@ class bitesizePageObject {
     static selectEngLanguageDropdown() {
         cy.get("div.global-language-selector__container").find('span')
             .each(($el, index, $list) => {
+                //we can iterate the loop by each method.
                 var langaugesdiv = $el.text()
                 if (langaugesdiv == 'English') {
                     cy.wrap($el).click();

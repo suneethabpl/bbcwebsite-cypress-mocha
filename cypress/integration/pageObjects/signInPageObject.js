@@ -16,6 +16,9 @@ static emptyFieldSignin(){
 static getEmailId(emailId){
     console.log("First Log");
     cy.get('#user-identifier-input').type(emailId,{delay:30}).should('have.value',emailId)
+    //in type command we know when we type something we can pass also there is a delay inside there.
+    //so, we can put implicity delay. 
+    //we enter email id as s@gmail.com so, we confirm the same is in the input field through asertion should('have.value')
     console.log("second Log");
 }
 
@@ -27,6 +30,7 @@ static getPassword(pwd){
 static submitButton(){
 cy.get('#submit-button').should('be.visible').click().wait(2000);
 console.log("fourth log");
+//here we noticed fist run console.log commands and then run cypress commands because cypress commads are asynchronous.
 cy.on('window:alert', (str) => {
     expect(str).to.equal('Sorry, your account is locked')
 })

@@ -5,6 +5,7 @@ class homePageObject {
     }
     static getTitle() {
         cy.get(".ssrcss-cl4b5i-MastheadText.e9p57e2").wait(4000).invoke('text').then((text1) => {
+               //text1 variable holds the text of the heading element.
             expect(text1).to.eq("Welcome to the BBC")
         })
     }

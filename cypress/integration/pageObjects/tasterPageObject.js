@@ -8,6 +8,7 @@ class tasterPageObject {
             var headingstring = tasterpageheading.text();
             cy.log('welecome to Taster page')
             cy.log(headingstring);
+            // console.log('I am inside')
         })
     }
     static listOfTasterDropdowmEle() {
